@@ -78,9 +78,10 @@ function BubbleSort3($arr){
         //从后往前循环
         for($j = $num-2; $j >= $i; $j--){//？$num-1 和 $num-2  的区别
             if($arr[$j]>$arr[$j+1]){
-                $temp = $arr[$j];
-                $arr[$j] = $arr[$j+1];
-                $arr[$j+1] =$temp;
+//                $temp = $arr[$j];
+//                $arr[$j] = $arr[$j+1];
+//                $arr[$j+1] =$temp;
+                swap($arr,$j,$j+1);
                 $flag = true;
             }
         }

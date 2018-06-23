@@ -6,6 +6,13 @@
  * Time: 16:59
  */
 define('IS_CLI', PHP_SAPI == 'cli' ? true : false);
+/**
+ * @param $var
+ * @param bool $echo
+ * @param null $label
+ * @param int $flags
+ * @return mixed|string|void
+ */
 function dump($var, $echo = true, $label = null, $flags = ENT_SUBSTITUTE)
 {
     $label = (null === $label) ? '' : rtrim($label) . ':';
@@ -23,8 +30,15 @@ function dump($var, $echo = true, $label = null, $flags = ENT_SUBSTITUTE)
     }
     if ($echo) {
         echo($output);
-        return '';
+        return;
     } else {
         return $output;
     }
+}
+#交换位置
+function swap(&$arr,$i,$j)
+{
+    $temp = $arr[$i];
+    $arr[$i] = $arr[$j];
+    $arr[$j] = $temp;
 }
